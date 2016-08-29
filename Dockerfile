@@ -16,7 +16,7 @@ RUN apk update && apk upgrade && \
     # Make info file about this build
     printf "Build of alimashuri/alpine-lamp, date: %s\n"  `date -u +"%Y-%m-%dT%H:%M:%SZ"` >> /etc/BUILD && \
 
-    apk add apache2 libxml2-dev apache2-utils && \
+    apk add --update apache2 libxml2-dev apache2-utils && \
     apk add --update tzdata && \
     cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && \
     echo "${TIMEZONE}" > /etc/timezone && \
